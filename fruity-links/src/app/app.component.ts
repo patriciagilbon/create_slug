@@ -12,15 +12,23 @@ export class AppComponent {
   targetUrl = '';
   domainId = '62139cf690828ef7c0f926f7';
   permalink: Permalink | undefined;
-
+  loading = false;
+  messageButton = 'Shorten'
+  imageButton = 'copy'
   constructor(private fruityLinkService: FruityLinkService) {
   }
 
 
   shortenUrl() {
+    this.loading = true;
+    this.messageButton = 'Loading'
+    this.imageButton = 'loading'
     const creator: PermalinkCreator = new PermalinkCreator(this.domainId, this.targetUrl);
     this.fruityLinkService.shortenUrl(creator).subscribe((permalink: Permalink) => {
       this.permalink = permalink;
+      this.loading = false;
+      this.imageButton = 'copy';
+      this.messageButton = 'Shorten'
     });
     console.log('Here now!');
   }
