@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Permalink } from '../models/permalink';
 import { PermalinkCreator } from '../models/permalink-creator';
 
@@ -8,14 +10,14 @@ import { PermalinkCreator } from '../models/permalink-creator';
 })
 export class FruityLinkService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  
+
   shortenUrl(plCreator: PermalinkCreator): Observable<Permalink> {
-    return of({
-      shortenedUrl: 'https://paty.link/MyShortUrl',
-      slug: 'MyShortUrl',
-      targetUrl: plCreator.targetUrl
-    } as Permalink).pipe(delay(2000));
+    return this.httpClient.post<Permalink>(`${environment.apiBaseUrl}/api/links`, plCreator, {
+      headers: {
+        'Authorization': `Bearer ${environment.apiAuthorizationSecret}`
+      }
+    });
   }
 }

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseUrl: 'https://frog.link',
+  apiAuthorizationSecret: 'Nbj0iqt6uxnYlJtVj32UCRFLwUvrN3YV3bRLLdkl0BDwtczChT5lkqKN2NzZSMLcnG6rncekmFAj2fWAjjKnIT9hUEMpBNgMABOLSVU7qCYplB2kKEbaYsdGavpBxHrP'
 };
 
 /*
