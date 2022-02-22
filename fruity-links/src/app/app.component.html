@@ -1,0 +1,17 @@
+<!-- NG-ZORRO -->
+
+<nz-layout>
+  <nz-content>
+    <div class="inner-content">
+      <input nz-input class="my-input" nzSize="large" placeholder="Enter your link" [(ngModel)]="targetUrl" />
+      <br/>
+      <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="shortenUrl()">
+        <i nz-icon nzType="copy" nzTheme="outline"></i>
+        Shorten</button>
+        <br/>
+        <div class="result" *ngIf="permalink">
+          {{permalink.shortenedUrl}}
+        </div>
+    </div>
+  </nz-content>
+  <nz-footer>Paty Design ©2022</nz-footer>
