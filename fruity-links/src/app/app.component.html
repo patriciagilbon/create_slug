@@ -11,25 +11,23 @@
   </nz-layout>
   <nz-content>
     <div class="inner-content">
-      <ng-container *ngIf="empty && url_shorten ==0">
-        <nz-alert nzType="error" nzCloseable nzMessage="Value is empty. Please input your URL." (nzOnClose)="warningButton()">
-        </nz-alert> 
-      </ng-container>
       <br>
       <br>
       <ng-container *ngIf="permalink"><h3 nz-typography>Your permalink has been generated and copied</h3></ng-container>
 
       <div class="result" *ngIf="!permalink">
         <h3 nz-typography>Input your URL</h3>
-        <nz-input-group class="my-input" nzAddOnBefore="Http://" nzAddOnAfter=".com">
-        <input nz-input nzSize="large" nzShape="round" placeholder="Enter your link" [(ngModel)]="targetUrl" [disabled]="loading || empty"/>
-        </nz-input-group>
+        <input nz-input class="url-input" nzSize="large" nzShape="round" placeholder="Enter your link" (ngModelChange)="onUrlChanged($event)" [(ngModel)]="targetUrl" [disabled]="loading"/>
       <br/>
-      <br/> 
-        <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="shortenUrl()" [disabled]="loading || empty">
+      <div class="error-messages">
+        <ng-container *ngIf="regexError">
+          Please enter a valid URL. Starts with http:// or https://
+        </ng-container>
+      </div>
+        <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="shortenUrl()" [disabled]="!submitEnabled()">
           <i nz-icon nzType="copy" *ngIf="!loading" nzTheme="outline"></i>
           <i nz-icon nzType="loading" *ngIf="loading" nzTheme="outline"></i>
-          <ng-container *ngIf="!loading && url_shorten==0">Shorten</ng-container>
+          <ng-container *ngIf="!loading">Shorten</ng-container>
           <ng-container *ngIf="loading">Generating</ng-container>
         </button>
       </div>

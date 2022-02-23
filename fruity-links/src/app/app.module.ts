@@ -19,6 +19,7 @@ import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 
 registerLocaleData(en);
@@ -42,7 +43,8 @@ registerLocaleData(en);
     NzImageModule,
     NzSelectModule,
     NzFormModule,
-    NzInputNumberModule
+    NzInputNumberModule,
+    NzMessageModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

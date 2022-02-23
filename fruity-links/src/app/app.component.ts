@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Permalink } from './models/permalink';
 import { PermalinkCreator } from './models/permalink-creator';
 import { FruityLinkService } from './services/fruity-link.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
+
+const VALID_URL_REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
 
 @Component({
   selector: 'app-root',
@@ -15,47 +18,44 @@ export class AppComponent {
   domainId = '62139cf690828ef7c0f926f7';
   permalink: Permalink | undefined;
   loading = false;
-  empty = false;
-  messageButton = 'Shorten'
-  imageButton = 'copy'
-  url_shorten = 0;
-  constructor(private fruityLinkService: FruityLinkService) {
+  regexError = false;
+  
+  constructor(private fruityLinkService: FruityLinkService, private message: NzMessageService) {
   }
 
 
   shortenUrl() {
     this.loading = true;
-    this.messageButton = 'Loading'
-    this.imageButton = 'loading'
-    if (this.targetUrl == ""){
-      this.empty = true;
+    if (this.isUrlEmpty()) {
+      this.message.create('error', `URL cannot be empty!`);
       this.loading = false;
-      this.url_shorten = 0;
-    }
-    else{
+    } else {
       this.targetUrl = 'Http://'+ (this.targetUrl) + '.com'
       const creator: PermalinkCreator = new PermalinkCreator(this.domainId, this.targetUrl);
       this.fruityLinkService.shortenUrl(creator).subscribe((permalink: Permalink) => {
       this.permalink = permalink;
       this.loading = false;
-      this.empty = false;
-      this.imageButton = 'copy';
-      this.messageButton = 'Shorten'
       this.oldTargetUrl = this.targetUrl
       this.targetUrl = ""
       navigator.clipboard.writeText(permalink.shortenedUrl);
-      this.url_shorten = this.url_shorten + 1
     });
     }
   }
 
-  warningButton(){
-    this.empty = false;
-    this.url_shorten = 0;
+  onUrlChanged(value: string) {
+    this.regexError = value.trim().length > 0 && !value.trim().match(VALID_URL_REGEX);
+
+  }
+
+  isUrlEmpty() {
+    return this.targetUrl?.trim() === '';
+  }
+
+  submitEnabled() {
+    return !this.regexError && !this.isUrlEmpty();
   }
 
   reset(){
     this.permalink = undefined;
-    this.url_shorten = 0;
   }
 }
