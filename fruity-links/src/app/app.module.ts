@@ -16,6 +16,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 
 registerLocaleData(en);
@@ -36,7 +39,10 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NzAlertModule,
-    NzImageModule
+    NzImageModule,
+    NzSelectModule,
+    NzFormModule,
+    NzInputNumberModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

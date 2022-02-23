@@ -1,37 +1,63 @@
 <!-- NG-ZORRO -->
-
 <nz-layout>
   <nz-layout>
     <nz-header><img
       nz-image
-      width="80vh"
-      height="50vh"
-      nzSrc="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAAAhFBMVEX///8AcuEAZ98Ab+AAa+AAbeAAad9Tk+cAbuC+1fUFeOLS4/no8/0AZd8AaODv9v1to+vk7/z1+v7d6vqBru3F2vemxfKHsu5Zl+iYvfDU5PnM3/g9iea20PWNte5Rk+gwhOVIjuepx/NjnOl2p+wlfuS30fUAX96cvvAde+M1huWoxfIDNGHbAAAHKElEQVR4nO2d65aiOhBGJQlpVAKId6VVtJ3ROe//fgfvqSQocS3EjrV/NsEJ38qlqlKVabUQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEGQ30E6nG6ybcfrbPNkN2+6N68kDWVimzdHOYlYEFDP8yj1GWGT79q6+W7kQoZWfi/8IfwgmEzA/UVaY1/fiCX49k7V1wbC90wwMq2zt2/D1zOyDSkzinaAb/v19vgteEa2hSgV7TBVxQcscU/IlpB7qhUI9yeqvWxJ9EC1QrdR7f1uGGvZpndn6EW3Yf09bxRb2WZVVCsWOMcNEVvZtqqxZsafvKDvDWIp245XUq2Ypm77WpayaWONRYIxwTXjl2av6H1j2Mm2VgYb88bzwo8Nhz9MFU50X9L/hrCTbQVHmxhcn8QbxS7xk3o73ixWsvXgNgrdgYViBbM6u900VrLBORrt4NMf6KgSlzcFK9k2gdRWX/SV0eayi2Ul215uTLQ1/xsMxmBTV5/fACvZ5KWNGtoC2eiqlg6/BzayxbJs/o/eIAc/Vj1U/PuwkQ1spGynNxgA443X1OV3wEa2viwbNwQjFwxl0wGjja/1BlA2lw23p9c2k33xAz2smrr8DljtpLL/ZLIvgO8VuOzMW8kGZNE3yhi4V047pVaygUnI/6iPp3BHcPlAwUo24AZo9m4Ko0rC5fNSK9nAnuAxZRZmAZDN5R3BMt4G3QAykJ9NYACEjWvsdeMosg3bJZxO8Nowpsaz60Scb5X8BtFr7JteAJTN42X8PeVwdWBzKrLdcDZrL1ZCOWVwOv6hyVYKP8n2Rz0mpYyTiDPtV9webLaytfLgcdtDc6dXNnvZwvIULQm6bfarasdWtla7SjYDc3uKPiFba/dYN8eP5FvPyNYaPdCNEtfzjZ6SrTWM7u0LzHPZqzrzjGytOFfNtNtQEy4HPq48JVvh1Hci04tUrJxf1o48KVurtV4JxcgNmMjbjXzE61lWlC3SC2Rm41UUMRYU+IWvwLKp62bHjaUgMtERyRdlB/wCY1ZpPByNk8lkkizWXcfTTiHxrKB/otfrnUuvIGlB0/1EnKQ3/16P1t/DiutUf3hsPv+cZU2nu8gOYaADEWHL0QMt5uMVuTbn+XT2ml6+F+HCIwwksBUGRbmbFI6L5uAAkJHO7tPWwDiJDCEhKnKzpxQmxNScs/FHCTfVU+TPNiwxZBaVN/cY/YD6vjNxdqf8jGinAnebe8LtU4QbM/9upJsvYfN+cD8wzrY2Jfe/lpnRK5d1+LJq7gXeB+hW4XQgWsjNH3uxgetHCa1qNXtiZtXcY86vb4MqNXvByqq5WiDjHn218D1gJGJcMeLo37MM/WpVuMUbbttvE7grUpKNZnEaz8e+L/1xewk/fmmbKPUZ8/WJyxZ3/9lfjjJ62PYa004nZ+OMRvvrjNNKvhnPB9Ppzz/dxWAuD7cBzO0Gpdrj4/yNOtIylUDngPKLExqO1UMZp5MpgQx+Dh8mzOMeyKOHY8pfSfZZ31OSkVYv6H5DdOGGoD72oGitYXRHmFiZpSKstetNApKUIy2HWY1+jGFOs+ILdOHCZyqTcQRQIHrNQO13z8xmXYkZzEHV6zngyucP1OfOIJv8t8/cwNOsM6IDV0KubZXQBqS5+twZ5EnHr0fDiTGYRv/BetKl/nMgRZXuX/klrwQkzJPrSlYi2xLWXBns2QQYw86WqoWyDtF15zPLFmxCuwo/ZwsjgQ7kgWz+IHxUTzr9DNlSINs1OGSWje3AJOX/6b8HDRT/lZ/yUkDp2XX4mGWLhmBLYAb7Al544W6sUq50vBUylsjWAxd9mJwn0D5w9y4ysPVdJ5VZNk9JhiPamf0c+F4OF12N5Fgtv5j9RtkOgwcs+fqNFrCQjbubIgjDbZe9dPP3dOczkWU4GBzQ81evGlvDuIBwOOAG7frO6UvjS5ZbJj09mnVwAHIQ45hDT97kRTgDtLRoRxYizXxVBWhhUCZl1ihjzRBPcYgYpiVQPr1MrXQHzupPJRqhog2ZnILoaVvLb6h8PfmvRLl0zeP+ZtQeDkdJYLznKVGaB1GwWi5XvnZSHxl8L4eItbOTgPGIc+WE6nL/sN7cowXaH50/lx89uiH8wO0aXXUJK0E4n1mZl6WqSbBb/PurSkEpcfqU9EjqPczqAIWO28f1y9xdv+pGaFiboGpgeU/3j4anmhDnKOH+7sQTyqaYZvfTZz6jxu/ApjwjJmB6tvigtC7ykOzr8nG8wndgHnBU5KbMyPm2JKWyaP9RhR3pmGv/AZNHyb7MRVp3iL41+GTlbtijhHS3F1I5R+BzsrwnQvuLcKk9ZRFPnL5+vZT+buKJw9myECwbtB9FftL2IGPn9nS5cP9igTukvUOJZPVY2bF96HBsDUEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQmf8BckJbXFsgizoAAAAASUVORK5CYII="
+      width="100px"
+      height="100px"
+      nzSrc="../assets/images/fruity-links.png"
       alt=""
     /></nz-header>
   </nz-layout>
   <nz-content>
     <div class="inner-content">
-      <ng-container *ngIf="empty">
-        <nz-alert nzType="error" nzMessage="Value is empty. Please input your URL." nzCloseText="Close Now"></nz-alert> 
+      <ng-container *ngIf="empty && url_shorten ==0">
+        <nz-alert nzType="error" nzCloseable nzMessage="Value is empty. Please input your URL." (nzOnClose)="warningButton()">
+        </nz-alert> 
       </ng-container>
       <br>
-      <h3 nz-typography>Input your URL</h3>
-      <nz-input-group class="my-input" nzAddOnBefore="Http://" nzAddOnAfter=".com">
-      <input nz-input nzSize="large" nzShape="round" placeholder="Enter your link" [(ngModel)]="targetUrl" [disabled]="loading"/>
-      </nz-input-group>
+      <br>
+      <ng-container *ngIf="permalink"><h3 nz-typography>Your permalink has been generated and copied</h3></ng-container>
+
+      <div class="result" *ngIf="!permalink">
+        <h3 nz-typography>Input your URL</h3>
+        <nz-input-group class="my-input" nzAddOnBefore="Http://" nzAddOnAfter=".com">
+        <input nz-input nzSize="large" nzShape="round" placeholder="Enter your link" [(ngModel)]="targetUrl" [disabled]="loading || empty"/>
+        </nz-input-group>
       <br/>
-      <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="shortenUrl()" [disabled]="loading">
-        <i nz-icon nzType="copy" *ngIf="!loading" nzTheme="outline"></i>
-        <i nz-icon nzType="loading" *ngIf="loading" nzTheme="outline"></i>
-        <ng-container *ngIf="!loading">Shorten</ng-container>
-        <ng-container *ngIf="loading">Generating</ng-container>
-      </button>
-      <br>
-      <br>
-      <div class="result" *ngIf="permalink">
-        <nz-alert nzType="info" nzMessage="{{'Your permalink has been generated and copied to your clipboard: ' + permalink.shortenedUrl}}" nzShowIcon nzCloseText="Ok!"></nz-alert>
+      <br/> 
+        <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="shortenUrl()" [disabled]="loading || empty">
+          <i nz-icon nzType="copy" *ngIf="!loading" nzTheme="outline"></i>
+          <i nz-icon nzType="loading" *ngIf="loading" nzTheme="outline"></i>
+          <ng-container *ngIf="!loading && url_shorten==0">Shorten</ng-container>
+          <ng-container *ngIf="loading">Generating</ng-container>
+        </button>
       </div>
+      
+      <div class="result" *ngIf="permalink">
+        <button nz-button nzType="primary" nzSize="large" nzShape="round" (click)="reset()">
+          <i nz-icon nzType="rocket"></i>
+          Shorten another URL
+        </button>      
+      <br>
+      <br>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="10">Your original URL</nz-form-label>
+          <nz-form-control nzHasFeedback>
+            <input nz-input value={{oldTargetUrl}}>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label [nzSpan]="10">Your shortened URL</nz-form-label>
+          <nz-form-control nzValidateStatus="success" nzHasFeedback>
+            <input nz-input value={{permalink.shortenedUrl}}>
+          </nz-form-control>
+        </nz-form-item>
+
+      </div>
+
     </div>
+    
   </nz-content>
   <nz-footer>Permalink generator ©2022</nz-footer>
